@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   get 'users/new'
 
   get 'help' => 'static_pages#help'
 
   get 'signup' => 'users#new'
 
-  # The priority is based upon order of creation: first created -> highest priority.
+  get 'login' => 'sessions#new'
+
+  post 'login' => 'sessions#create'
+
+  delete 'logout' => 'sessions#destroy'
+
+  # The priority is based upon order of creation: first creatr3212  090098665443333333333333333332323221` ed -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
