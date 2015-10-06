@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :entries , only: [:show, :create, :destroy]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
