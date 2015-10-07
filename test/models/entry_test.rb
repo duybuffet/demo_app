@@ -29,13 +29,8 @@ class EntryTest < ActiveSupport::TestCase
   	assert_not @entry.valid?
   end
 
-  test "content should be at most 140 chars" do
-  	@entry.content = "a" * 141
-  	assert_not @entry.valid?
-  end
-
-  test "title should be at most 20 chars" do
-  	@entry.title = "a" * 21
+  test "title should be at most 100 chars" do
+  	@entry.title = "a" * 101
   	assert_not @entry.valid?
   end
 
