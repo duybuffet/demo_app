@@ -4,11 +4,12 @@ class CommentsController < ApplicationController
 		entry = Entry.find(params[:entry_id])
 		if !entry.nil?
 			comment = entry.comments.build(content: params[:comment][:content])
+			comment.user_id = current_user.id
 			if comment.save
 				flash[:success] = "Commented!"  
 				redirect_to entry
 			else
-				flash[:error] = "Error!"  
+				flash[:danger] = "Error!"  
 				redirect_to entry
 			end
 		else

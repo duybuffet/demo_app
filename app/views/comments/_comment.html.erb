@@ -1,4 +1,7 @@
 <br>
-Content : <%=comment.content %>
+Content : <%=comment.content %> - 
 Posted on : <%=comment.created_at %>
+<% if comment.user != current_user %>
+- Author : <%=comment.user.name %>
+<% end %>
 <br>

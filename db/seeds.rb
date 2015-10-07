@@ -28,9 +28,12 @@ users = User.order(:created_at).take(6)
 end
 
 entry = Entry.first
+u = User.first
 50.times do
 	content = Faker::Lorem.sentence(5)
-	entry.comments.create!(content: content)
+	comment = entry.comments.build(content: content)
+	comment.user_id = u.id
+	comment.save
 end
 
 # Following relationships
