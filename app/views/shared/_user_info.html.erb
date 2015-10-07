@@ -1,4 +1,13 @@
-<%= link_to gravatar_for(current_user), current_user %>
-<h1><%= current_user.name %></h1>
-<span><%= link_to "view my profile", current_user %></span>
-<span><%= pluralize(current_user.entries.count, "entry") %></span>
+<h1>Your profile</h1>
+<div class="profile">
+	<div class="col-md-2">
+		<%= link_to gravatar_for(current_user, 50), current_user %>
+	</div>
+	<div class="col-md-9">
+		<span class="profile-name"><%= current_user.name %></span> 
+		<span class="sign-profile-name">@username </span>
+		<span><%= link_to "view my profile", current_user %></span>
+		<%= render 'shared/stats'%>
+	</div>
+	
+</div>

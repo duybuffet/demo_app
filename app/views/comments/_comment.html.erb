@@ -1,7 +1,12 @@
-<br>
-Content : <%=comment.content %> - 
-Posted on : <%=comment.created_at %>
-<% if comment.user != current_user %>
-- Author : <%=comment.user.name %>
-<% end %>
-<br>
+<div class="comment">
+	<div class="row">
+		<div class="col-md-1">
+			<%= link_to gravatar_for(comment.user, 40), comment.user %>
+		</div>
+		<div class="col-md-11">
+			<span class="comment-author"><%=link_to comment.user.name.upcase, comment.user %></span>
+			<span class="comment-content"><%=comment.content %></span>
+			<span class="comment-timestamp"><%=time_ago_in_words(comment.created_at)%></span>
+		</div>
+	</div>		
+</div>

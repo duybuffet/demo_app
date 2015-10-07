@@ -1,14 +1,32 @@
-Title : <%= @entry.title %>
-<br>
-Content : <%= @entry.content %>
-<br>
-Number of comments : <%= @comments.count %>
-<div>	
-	<%= render @comments if @comments.any? %>
-	<%= will_paginate @comments%>
-</div>
-<div>
-	<% if (logged_in? && (current_user == @entry.user || current_user.following?(@entry.user)))%>
-		<%= render 'shared/comment_form'%>
-	<% end %>
+<div class="row">
+	<div class="entry-title row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<h1><%= @entry.title %></h1>
+			<h5 class="text-center" style="color: #AFA8A8;font-size: 15px; font-style: italic;">Posted on : <%= @entry.created_at.localtime.strftime('%m/%d/%Y') %></h5>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-md-2"></div>
+		<div class="col-md-8 line">
+			<%= @entry.content %>
+		</div>
+		<div class="col-md-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<div>
+				<% if (logged_in? && (current_user == @entry.user || current_user.following?(@entry.user)))%>
+					<%= render 'shared/comment_form'%>
+				<% end %>
+			</div>
+			<div>	
+				<%= render @comments if @comments.any? %>
+				<%= will_paginate @comments%>
+			</div>
+			
+		</div>
+	</div>	
 </div>

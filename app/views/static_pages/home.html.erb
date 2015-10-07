@@ -1,17 +1,16 @@
 <% if logged_in? %>
 	<div class="row">
 		<aside class="col-md-4">
-			<section class="user_info">
-				<%= render 'shared/user_info' %>
-			</section>
-			<section class="stats">
-				<%= render 'shared/stats'%>
-			</section>
+			<div class="user_stats">
+				<section class="user_info">
+					<%= render 'shared/user_info' %>
+				</section>
+			</div>
 			<section class="entry_form">
 				<%= render 'shared/entry_form' %>
 			</section>
 		</aside>
-		<div class="col-md-8">
+		<div class="col-md-8 entry-feed">
 			<h3>Entry Feed</h3>
 			<%= render 'shared/feed'%>
 		</div>
@@ -22,6 +21,6 @@
 		<h2>
 		This is the home page for the blog app
 		</h2>
-		<%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-primary" %>
+		<%= link_to "Sign up now!", signup_path , class: "btn btn-lg btn-success" %>
 	</div>
 <% end %>
