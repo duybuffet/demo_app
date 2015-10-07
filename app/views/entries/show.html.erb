@@ -1,0 +1,14 @@
+Title : <%= @entry.title %>
+<br>
+Content : <%= @entry.content %>
+<br>
+Number of comments : <%= @comments.count %>
+<div>	
+	<%= render @comments if @comments.any? %>
+	<%= will_paginate @comments%>
+</div>
+<div>
+	<% if (logged_in? && (current_user == @entry.user || current_user.following?(@entry.user)))%>
+		<%= render 'shared/comment_form'%>
+	<% end %>
+</div>

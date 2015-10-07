@@ -11,6 +11,11 @@ class EntriesController < ApplicationController
 		end
 	end
 
+	def show
+		@entry = Entry.find_by(id: params[:id])
+		@comments = @entry.comments.paginate(page: params[:page])
+	end
+
 	def destroy
 		@entry.destroy
 	    flash[:success] = "Entry deleted"

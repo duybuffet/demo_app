@@ -27,6 +27,12 @@ users = User.order(:created_at).take(6)
 	users.each {|user| user.entries.create!(content: content, title: title)}
 end
 
+entry = Entry.first
+50.times do
+	content = Faker::Lorem.sentence(5)
+	entry.comments.create!(content: content)
+end
+
 # Following relationships
 users = User.all
 user  = users.first
