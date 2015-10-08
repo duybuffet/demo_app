@@ -35,6 +35,9 @@ textarea {
 
 a {
   color: #58B84E;
+  &:hover {
+    color: #53A94B;
+  }
 }
 
 /* typography */
@@ -126,6 +129,43 @@ div.comment {
   span.comment-timestamp {
     color: #ADA8A8;
     font-size: small;
+  }
+}
+
+div.homepage-bg {
+  background-color: rgba(38,232,106,0.3);
+  border: 1px solid #D2D2D2;
+  border-radius: 5px;
+  height: 40%;
+  width: 100%;
+  margin: 15px 0;
+
+  h1 {
+    font-size: 5em;
+    color: white;
+    text-shadow: 2px 2px 4px #58B84E;
+  }
+
+  h2 {
+    text-shadow: 0 0 3px #3EDC34;
+  }
+}
+
+.pagination > li > a {
+  color: #58B84E;
+  &:hover {
+    color: #53A94B;
+  }
+}
+
+div.pagination > ul.pagination {
+  li.active a {
+    background-color: #58B84E;
+    border-color: #58B84E;  
+  }
+
+  li a[rel="next"], a[rel="prev start"], a[rel="prev"] {
+    color: #58B84E;
   }
 }
 
@@ -344,5 +384,6 @@ span.picture {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
 
 
