@@ -16,4 +16,13 @@ module ApplicationHelper
         redirect_to login_url
       end
     end
+
+    def content_str(str, length=15)
+    	lst_str = str.split
+    	if lst_str.length > length
+    		lst_str[0..14].join(' ')
+    	else
+    		str
+    	end
+    end
 end
