@@ -6,7 +6,7 @@
     </strong>
       <% if current_user.entries.count > 1%>
       entries
-      <% elsif current_user.entries.count == 1%>
+      <% elsif current_user.entries.count == 1 || current_user.entries.count == 0 %>
       entry
       <% end %>
     
