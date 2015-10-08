@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   get 'users/new'
 
-  get 'help' => 'static_pages#help'
+  get 'feed' => 'static_pages#help'
 
   get 'signup' => 'users#new'
 

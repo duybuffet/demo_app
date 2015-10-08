@@ -7,5 +7,6 @@ class StaticPagesController < ApplicationController
   end
 
   def help
+  	@feed_items = Entry.all.paginate(page: params[:page])
   end
 end

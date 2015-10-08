@@ -3,7 +3,7 @@
 	<span class="display_title"><%= link_to entry.title, entry %> <b>by @<%= link_to entry.user.name, entry.user%></b></span>
 	<span class="content"><%= content_str(entry.content) %></span>
 	<span class="timestamp">
-		Posted At <%= entry.created_at.localtime.strftime('%m/%d/%Y - %H:%M:%S')%> - <%=pluralize(entry.comments.count, "comment")%>
+		Posted At <%= entry.created_at.localtime.strftime('%m/%d/%Y - %H:%M:%S')%> - <%=link_to pluralize(entry.comments.count, "comment"), entry_path(entry, :anchor=>"entry_comments") %>
 		<% if current_user?(entry.user) %>
 			<%= link_to "delete", entry, method: :delete, class: "text-danger", 
 			data: {confirm: 'Are you sure?'}%>
