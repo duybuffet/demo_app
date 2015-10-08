@@ -1,6 +1,6 @@
 <li id="entry-<%= entry.id %>">
 	<%= link_to gravatar_for(entry.user), entry.user %>
-	<span class="display_title"><%= link_to entry.title, entry %> <b>by <%= link_to entry.user.name, entry.user%></b>@username</span>
+	<span class="display_title"><%= link_to entry.title, entry %> <b>by <%= link_to entry.user.name, entry.user%></b></span>
 	<span class="content"><%= content_str(entry.content) %></span>
 	<span class="timestamp">
 		Posted At <%= entry.created_at.localtime.strftime('%m/%d/%Y - %H:%M:%S')%> - <%=link_to pluralize(entry.comments.count, "comment"), entry_path(entry, :anchor=>"entry_comments") %>
